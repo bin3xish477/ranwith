@@ -47,8 +47,10 @@ func isProcess(f string) bool {
 func newProc(f string) *Proc {
 	d, _ := os.ReadFile(fmt.Sprintf("%s/%s/cmdline", procDir, f))
 	cmd := string(d)
+	
 	d, _ = os.ReadFile(fmt.Sprintf("%s/%s/comm", procDir, f))
 	name := strings.TrimRight(string(d), "\n")
+	
 	pid, _ := strconv.Atoi(f)
 
 	return &Proc{
@@ -56,7 +58,6 @@ func newProc(f string) *Proc {
 		Pid:     pid,
 		CmdLine: cmd,
 	}
-
 }
 
 func createProcessList() {
@@ -76,7 +77,6 @@ func createProcessList() {
 
 func main() {
 	createProcessList()
-
 	for _, proc := range procList {
 		proc.Pprint()
 	}
