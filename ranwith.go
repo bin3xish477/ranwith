@@ -12,9 +12,7 @@ const (
 	red    = "\u001b[91m"
 	green  = "\u001b[32m"
 	blue   = "\u001b[94m"
-	yellow = "\u001b[33m"
 	end    = "\u001b[0m"
-	bold   = "\u001b[1m"
 	underL = "\u001b[4m"
 
 	procDir = "/proc"
